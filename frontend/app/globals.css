@@ -1,0 +1,299 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --font-display: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-subtle: var(--brand-subtle);
+  --color-destructive-subtle: var(--destructive-subtle);
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-subtle);
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-subtle);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+ * Dani Brothers — "Clean Light Retail"
+ *
+ * Note on shadcn semantics: in this system `--accent` is the *hover surface*
+ * (a light grey), NOT the brand colour. The brand blue lives in `--brand` so
+ * that ghost/outline variants keep working as intended.
+ */
+:root {
+  --background: oklch(0.985 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.145 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.967 0 0);
+  --muted-foreground: oklch(0.552 0 0);
+  --accent: oklch(0.967 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  /* Brand — the single accent. Swap this one value to re-skin the site. */
+  --brand: oklch(0.488 0.243 264.376);
+  --brand-foreground: oklch(0.985 0 0);
+  --brand-subtle: oklch(0.962 0.018 264.376);
+  --destructive-subtle: oklch(0.958 0.024 17.38);
+  --success: oklch(0.527 0.154 150.069);
+  --success-subtle: oklch(0.962 0.044 156.743);
+  --warning: oklch(0.554 0.135 66.442);
+  --warning-subtle: oklch(0.962 0.059 95.617);
+
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.527 0.154 150.069);
+  --chart-3: oklch(0.554 0.135 66.442);
+  --chart-4: oklch(0.606 0.25 292.717);
+  --chart-5: oklch(0.577 0.245 27.325);
+  --radius: 0.75rem;
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.145 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.967 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+
+  --brand: oklch(0.623 0.214 259.815);
+  --brand-foreground: oklch(0.985 0 0);
+  --brand-subtle: oklch(0.28 0.06 264.376);
+  --destructive-subtle: oklch(0.28 0.055 20);
+  --success: oklch(0.696 0.17 162.48);
+  --success-subtle: oklch(0.28 0.05 156.743);
+  --warning: oklch(0.769 0.188 70.08);
+  --warning-subtle: oklch(0.29 0.05 95.617);
+
+  --chart-1: oklch(0.623 0.214 259.815);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.704 0.191 22.216);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.985 0 0);
+  --sidebar-primary-foreground: oklch(0.205 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  /* Prices, specs and any aligned figures must not jitter between values. */
+  .tnum,
+  [data-slot="table"] td,
+  [data-slot="table"] th {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.7 0 0 / 0.3) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: oklch(0.7 0 0 / 0.3);
+  border-radius: 999px;
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 75rem; /* 1200px */
+  margin-inline: auto;
+  padding-inline: --spacing(4);
+  @media (width >= 40rem) {
+    padding-inline: --spacing(6);
+  }
+}
+
+/*
+ * Display type. Tight tracking at large sizes is what stops the page reading
+ * like a default Tailwind template, so it is baked in rather than per-element.
+ */
+@utility text-display {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+@utility text-display-sm {
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+@utility text-eyebrow {
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Mega-menu entrance: each row rises with its own animation-delay. Using a
+   keyframe instead of transition-delay so hover states stay instant. */
+@keyframes mega-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility mega-rise {
+  animation: mega-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Stats card: rotating conic ring on hover. Registered as an angle so the
+   gradient's start direction can animate (plain keyframes can't touch it). */
+@property --orbit-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-orbit {
+  to {
+    --orbit-angle: 360deg;
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee-x 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
