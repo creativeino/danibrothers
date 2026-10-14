@@ -183,7 +183,7 @@ def seed() -> None:
             name="Dani Admin",
             email="admin@danibrothers.com",
             password_hash=pwd_context.hash(os.environ.get("SEED_ADMIN_PASSWORD", "admin12345")),
-            phone="+92 345 291 6412",
+            phone="+92 333 136 0441",
             role="ADMIN",
         )
         customer = User(

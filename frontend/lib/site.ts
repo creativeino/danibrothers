@@ -4,11 +4,11 @@ export const site = {
   description:
     "Buy new and certified pre-owned laptops, desktops, CCTV security cameras and computer accessories — with warranty, honest pricing and fast delivery across Karachi (Rs. 500 flat).",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  phone: "+92 345 291 6412",
-  phoneHref: "tel:+923452916412",
-  email: "hello@danibrothers.com",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? "923452916412",
-  address: "Shop 12-A, Main Commercial Market, Gulshan-e-Maymar, Karachi",
+  phone: "+92 333 136 0441",
+  phoneHref: "tel:+923331360441",
+  email: "danibrothers99@gmail.com",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? "923331360441",
+  address: "B-13, Sector Z6, Gulshan-e-Maymar, Karachi",
   hours: "Mon–Sat, 11:00 AM – 9:00 PM",
   since: 2009,
 
@@ -86,8 +86,8 @@ export const SHIPPING_FLAT = 500
  */
 export const bankTransfer = {
   bankName: "Meezan Bank",
-  accountTitle: "",
-  accountNumber: "",
+  accountTitle: "Danish Saeed",
+  accountNumber: "01840100469035",
   iban: "",
   branch: "",
 }
